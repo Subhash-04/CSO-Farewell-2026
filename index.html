@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farewell CSO 2026 — You're Invited!</title>
+    <meta name="description"
+        content="You are cordially invited to the Farewell Party of CSO Department 2026. A retro music themed celebration!">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Orbitron:wght@400;700;900&family=Monoton&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Three.js Canvas Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Floating Music Notes (decorative) -->
+    <div class="floating-notes" aria-hidden="true">
+        <span class="note n1">♪</span>
+        <span class="note n2">♫</span>
+        <span class="note n3">♩</span>
+        <span class="note n4">♬</span>
+        <span class="note n5">♪</span>
+        <span class="note n6">♫</span>
+        <span class="note n7">♩</span>
+        <span class="note n8">♬</span>
+        <span class="note n9">♪</span>
+        <span class="note n10">♫</span>
+    </div>
+
+    <!-- Equalizer Bars (decorative) — Left -->
+    <div class="equalizer" aria-hidden="true">
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+    </div>
+    <!-- Equalizer Bars (decorative) — Right -->
+    <div class="equalizer eq-right" aria-hidden="true">
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+    </div>
+
+    <!-- =================== SCREEN 1: INVITATION =================== -->
+    <section id="invitation-screen" class="screen active">
+        <div class="invitation-content">
+            <!-- Vinyl Record -->
+            <div class="vinyl-container">
+                <div class="vinyl">
+                    <div class="vinyl-label">
+                        <span class="vinyl-text">CSO</span>
+                        <span class="vinyl-year">2026</span>
+                    </div>
+                    <div class="vinyl-hole"></div>
+                </div>
+            </div>
+
+            <!-- IoT Circuit decoration -->
+            <div class="circuit-deco top-left" aria-hidden="true">
+                <svg viewBox="0 0 200 200" width="200" height="200">
+                    <path d="M0,100 L50,100 L50,50 L100,50" stroke="var(--neon-pink)" fill="none" stroke-width="2"
+                        opacity="0.4" />
+                    <circle cx="100" cy="50" r="4" fill="var(--neon-pink)" opacity="0.6" />
+                    <path d="M0,150 L80,150 L80,80 L150,80" stroke="var(--neon-blue)" fill="none" stroke-width="1.5"
+                        opacity="0.3" />
+                    <circle cx="150" cy="80" r="3" fill="var(--neon-blue)" opacity="0.5" />
+                    <circle cx="50" cy="100" r="3" fill="var(--neon-pink)" opacity="0.5" />
+                    <rect x="40" y="130" width="12" height="8" rx="1" fill="none" stroke="var(--amber)" stroke-width="1"
+                        opacity="0.4" />
+                    <rect x="110" y="60" width="8" height="12" rx="1" fill="none" stroke="var(--amber)" stroke-width="1"
+                        opacity="0.4" />
+                </svg>
+            </div>
+            <div class="circuit-deco bottom-right" aria-hidden="true">
+                <svg viewBox="0 0 200 200" width="200" height="200">
+                    <path d="M200,100 L150,100 L150,150 L100,150" stroke="var(--neon-blue)" fill="none" stroke-width="2"
+                        opacity="0.4" />
+                    <circle cx="100" cy="150" r="4" fill="var(--neon-blue)" opacity="0.6" />
+                    <path d="M200,50 L120,50 L120,120 L60,120" stroke="var(--neon-pink)" fill="none" stroke-width="1.5"
+                        opacity="0.3" />
+                    <circle cx="60" cy="120" r="3" fill="var(--neon-pink)" opacity="0.5" />
+                    <rect x="140" y="60" width="12" height="8" rx="1" fill="none" stroke="var(--amber)" stroke-width="1"
+                        opacity="0.4" />
+                </svg>
+            </div>
+
+            <p class="invitation-subtitle glitch-text">YOU ARE CORDIALLY INVITED TO</p>
+            <h1 class="invitation-title">
+                <span class="title-line neon-glow">FAREWELL</span>
+                <span class="title-line title-dept">CSO 2026</span>
+            </h1>
+            <p class="invitation-tagline">🎵 A Retro Music Night to Remember 🎵</p>
+
+            <!-- Cassette Tape -->
+            <div class="cassette">
+                <div class="cassette-body">
+                    <div class="cassette-label">
+                        <span>SIDE A — FAREWELL MIX</span>
+                    </div>
+                    <div class="cassette-reels">
+                        <div class="reel left-reel"></div>
+                        <div class="reel right-reel"></div>
+                    </div>
+                    <div class="cassette-window"></div>
+                </div>
+            </div>
+
+            <p class="invitation-question">Will you join us for one last dance?</p>
+
+            <div class="button-container" id="button-container">
+                <button id="yes-btn" class="btn btn-yes">
+                    <span class="btn-icon">🎶</span> HECK YEAH!
+                </button>
+                <button id="no-btn" class="btn btn-no">
+                    <span class="btn-icon">😢</span> Nah, I'll Pass
+                </button>
+            </div>
+
+            <p id="escape-counter" class="escape-counter"></p>
+        </div>
+    </section>
+
+    <!-- =================== MODAL: NAME ENTRY =================== -->
+    <div id="name-modal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-vinyl" aria-hidden="true">
+                <div class="mini-vinyl spinning">
+                    <div class="mini-vinyl-hole"></div>
+                </div>
+            </div>
+            <h2 class="modal-title">Awesome! 🎉</h2>
+            <p class="modal-subtitle">Now drop your name on the record!</p>
+            <div class="input-group">
+                <input type="text" id="name-input" class="retro-input" placeholder="Your Name Here..." maxlength="30"
+                    autocomplete="off">
+                <div class="input-underline"></div>
+            </div>
+            <button id="submit-name-btn" class="btn btn-submit">
+                <span class="btn-icon">🎤</span> DROP THE MIC
+            </button>
+        </div>
+    </div>
+
+    <!-- =================== SCREEN 2: INVITATION CARD =================== -->
+    <section id="card-screen" class="screen">
+        <div class="card-wrapper">
+            <div class="invitation-card">
+                <!-- Card decorative corners -->
+                <div class="card-corner tl"></div>
+                <div class="card-corner tr"></div>
+                <div class="card-corner bl"></div>
+                <div class="card-corner br"></div>
+
+                <div class="card-header">
+                    <div class="card-vinyl-small spinning-slow">
+                        <div class="card-vinyl-hole"></div>
+                    </div>
+                    <h2 class="card-title">FAREWELL PARTY</h2>
+                    <p class="card-dept">CSO DEPARTMENT 2026</p>
+                </div>
+
+                <div class="card-divider">
+                    <span class="divider-note">♪</span>
+                    <div class="divider-line"></div>
+                    <span class="divider-note">♪</span>
+                </div>
+
+                <div class="card-body">
+                    <p class="card-dear">Dear</p>
+                    <h3 id="card-name" class="card-guest-name">Guest</h3>
+                    <p class="card-message">
+                        You are warmly invited to the <strong>Farewell Celebration</strong> of
+                        the CSO Department — Class of 2026.<br><br>
+                        Join us for an evening of <em>retro beats, nostalgic vibes, and unforgettable
+                            memories</em>.<br><br>
+                        Let's rewind the tape one last time and celebrate the journey
+                        that brought us together. 🎶
+                    </p>
+                    <p class="card-thankyou">
+                        💜 Thank you for being part of this beautiful journey. Every moment,
+                        every laugh, every memory we shared made it truly special.
+                        You didn't just attend the farewell — you made it unforgettable. 💜
+                    </p>
+                </div>
+
+                <div class="card-footer">
+                    <div class="card-detail">
+                        <span class="detail-icon">📅</span>
+                        <span class="detail-text">7th March 2026, Saturday</span>
+                    </div>
+                    <div class="card-detail">
+                        <span class="detail-icon">📍</span>
+                        <span class="detail-text">EEE Seminar Hall, C Block</span>
+                    </div>
+                    <div class="card-detail">
+                        <span class="detail-icon">🕓</span>
+                        <span class="detail-text">Evening, 4:00 PM</span>
+                    </div>
+                </div>
+
+                <div class="card-bottom">
+                    <p class="card-closing">See you on the dance floor! 🕺💃</p>
+                    <div class="mini-cassette" aria-hidden="true">
+                        <div class="mc-reel"></div>
+                        <div class="mc-reel"></div>
+                    </div>
+                </div>
+            </div>
+
+            <button id="save-btn" class="btn btn-save" style="margin-top:2rem;">
+                <span class="btn-icon">📸</span> Screenshot & Share!
+            </button>
+        </div>
+    </section>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
