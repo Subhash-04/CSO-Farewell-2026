@@ -410,5 +410,10 @@ function launchConfetti() {
 // 7. SCREENSHOT BUTTON
 // ==========================================
 document.getElementById('save-btn').addEventListener('click', () => {
-    alert('🎵 Take a screenshot (Ctrl+Shift+S or PrtSc) and share with your friends! 🎵');
+    const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent) || window.innerWidth <= 768;
+    if (isMobile) {
+        alert('📸 To take a screenshot:\n\n📱 Swipe down with 3 fingers\n   — OR —\n🔘 Press Power + Volume Down buttons at the same time\n\nThen share it with your friends! 🎵');
+    } else {
+        alert('🎵 Take a screenshot (Ctrl+Shift+S or PrtSc) and share with your friends! 🎵');
+    }
 });
